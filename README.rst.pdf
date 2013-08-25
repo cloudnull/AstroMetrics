@@ -1,0 +1,349 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+% 'BasicFonts': class PDFDictionary 
+1 0 obj
+% The standard fonts dictionary
+<< /F1 2 0 R
+ /F2 3 0 R
+ /F3 5 0 R >>
+endobj
+% 'F1': class PDFType1Font 
+2 0 obj
+% Font Helvetica
+<< /BaseFont /Helvetica
+ /Encoding /WinAnsiEncoding
+ /Name /F1
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F2': class PDFType1Font 
+3 0 obj
+% Font Helvetica-Bold
+<< /BaseFont /Helvetica-Bold
+ /Encoding /WinAnsiEncoding
+ /Name /F2
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Annot.NUMBER1': class PDFDictionary 
+4 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://libcloud.apache.org/) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 300.239
+ 485.7736
+ 377.8802
+ 497.7736 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'F3': class PDFType1Font 
+5 0 obj
+% Font Courier
+<< /BaseFont /Courier
+ /Encoding /WinAnsiEncoding
+ /Name /F3
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Page1': class PDFPage 
+6 0 obj
+% Page dictionary
+<< /Annots [ 4 0 R ]
+ /Contents 15 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 14 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'R7': class PDFCatalog 
+7 0 obj
+% Document Root
+<< /Outlines 9 0 R
+ /PageLabels 16 0 R
+ /PageMode /UseNone
+ /Pages 14 0 R
+ /Type /Catalog >>
+endobj
+% 'R8': class PDFInfo 
+8 0 obj
+<< /Author ()
+ /CreationDate (D:20130825184944+06'00')
+ /Creator (\(unspecified\))
+ /Keywords ()
+ /Producer (ReportLab PDF Library - www.reportlab.com)
+ /Subject (\(unspecified\))
+ /Title (AstroMetrics, The Cloud at your CLI) >>
+endobj
+% 'R9': class PDFOutlines 
+9 0 obj
+<< /Count 5
+ /First 10 0 R
+ /Last 10 0 R
+ /Type /Outlines >>
+endobj
+% 'Outline.0': class OutlineEntryObject 
+10 0 obj
+<< /Count 3
+ /Dest [ 6 0 R
+ /XYZ
+ 62.69291
+ 674.0236
+ 0 ]
+ /First 11 0 R
+ /Last 13 0 R
+ /Parent 9 0 R
+ /Title (Access Your Cloud with ONE Tool) >>
+endobj
+% 'Outline.5.0': class OutlineEntryObject 
+11 0 obj
+<< /Dest [ 6 0 R
+ /XYZ
+ 62.69291
+ 641.0236
+ 0 ]
+ /Next 12 0 R
+ /Parent 10 0 R
+ /Title (General Overview) >>
+endobj
+% 'Outline.5.1': class OutlineEntryObject 
+12 0 obj
+<< /Dest [ 6 0 R
+ /XYZ
+ 62.69291
+ 569.0236
+ 0 ]
+ /Next 13 0 R
+ /Parent 10 0 R
+ /Prev 11 0 R
+ /Title (NOTE) >>
+endobj
+% 'Outline.5.2': class OutlineEntryObject 
+13 0 obj
+<< /Dest [ 6 0 R
+ /XYZ
+ 62.69291
+ 521.0236
+ 0 ]
+ /Parent 10 0 R
+ /Prev 12 0 R
+ /Title (Information) >>
+endobj
+% 'R14': class PDFPages 
+14 0 obj
+% page tree
+<< /Count 1
+ /Kids [ 6 0 R ]
+ /Type /Pages >>
+endobj
+% 'R15': class PDFStream 
+15 0 obj
+% page stream
+<< /Length 4834 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 741.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4 Tm /F2 20 Tf 24 TL 64.36488 0 Td (AstroMetrics, The Cloud at your CLI) Tj T* -64.36488 0 Td ET
+Q
+Q
+q
+1 0 0 1 62.69291 716.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 48.03937 0 Td (Date:) Tj T* -48.03937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (2013-08-14 16:22) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 701.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 49.14937 0 Td (tags:) Tj T* -49.14937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (cloud, tool, cli, openstack, rackspace, aws, control) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 686.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 28.02937 0 Td (category:) Tj T* -28.02937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (*nix) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 653.0236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Access Your Cloud with ONE Tool) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 623.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (General Overview) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 581.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 26 Tm /F1 10 Tf 12 TL 2.20561 Tw (AstroMetrics is a system by which you can Control your cloud environment using a variety of cloud) Tj T* 0 Tw 1.302485 Tw (providers. This CLI tool is being built to work in Openstack environments as well as Rackspace Public) Tj T* 0 Tw (Clouds and Amazon AWS.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 551.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (NOTE) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 533.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (This is a 0.0.0 Release of the tool and while I can confirm things do work, you should expect broken-ness) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 503.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (Information) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 461.0236 cm
+q
+BT 1 0 0 1 0 26 Tm .46561 Tw 12 TL /F1 10 Tf 0 0 0 rg (The backend Library that is doing the heavy lifting is ) Tj 0 0 .501961 rg (Apache Libcloud ) Tj 0 0 0 rg (which provides functionality for the) Tj T* 0 Tw 2.349984 Tw (majority of cloud providers, however I have only tested and built for the three mentioned providers;) Tj T* 0 Tw (Amazon, Openstack, Rackspace.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 431.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .432846 Tw (If you like this project and want to help out, please do. I know that I am not capable of making everything) Tj T* 0 Tw (work with every provider for every situation, however with some outside interest we can make it happen.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 413.0236 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (CLI Client for the Cloud:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 124.686 cm
+q
+q
+.831369 0 0 .831369 0 0 cm
+q
+1 0 0 1 6.6 7.938713 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 564 336 re B*
+Q
+q
+BT 1 0 0 1 0 314 Tm 12 TL /F3 10 Tf 0 0 0 rg (optional arguments:) Tj T* (  -h, --help            show this help message and exit) Tj T* (      --log-level       Set the Log Level {warn, info, error, critical, debug}) Tj T* (      --debug-mode      Uses the standard "stdout" and "stderr" streams while in Daemon Mode) Tj T* (  -V  --version         show program's version number and exit) Tj T*  T* (Infrastructure Actions:) Tj T* (  ) Tj (<) Tj (COMMANDS) Tj (>) Tj  T*  T* (    node                Interactions with Cloud Nodes) Tj T* (    list                Listing information from the Cloud Provider) Tj T* (    show                Show information from the Cloud Provider on a resource) Tj T* (    volume              Interactions with Cloud Volumes) Tj T*  T* (Authentication:) Tj T* (  Authentication against the Cloud API) Tj T*  T* (  -u [USERNAME], --cloud-user     [USERNAME]    Defaults to env[CLOUD_USERNAME]) Tj T* (  -t [USERNAME], --cloud-tenant   [USERNAME]    Defaults to env[CLOUD_TENANT]) Tj T* (  -a [APIKEY],   --cloud-apikey   [APIKEY]      Defaults to env[CLOUD_APIKEY]) Tj T* (  -p [PASSWORD], --cloud-password [PASSWORD]    Defaults to env[CLOUD_PASSWORD]) Tj T* (  -r [REGION],   --cloud-region   [REGION]      Defaults to env[CLOUD_REGION]) Tj T* (                 --cloud-provider [PROVIDER]    Defaults to env[CLOUD_PROVIDER]) Tj T* (                 --cloud-authurl  [AUTH_URL]    Defaults to env[CLOUD_AUTHURL]) Tj T* (                 --cloud-version  [VERSION_NUM] Defaults to env[OS_VERSION]) Tj T*  T* (2013 All Rights Reserved:) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+ 
+endstream
+endobj
+% 'R16': class PDFPageLabels 
+16 0 obj
+% Document Root
+<< /Nums [ 0
+ 17 0 R ] >>
+endobj
+% 'R17': class PDFPageLabel 
+17 0 obj
+% None
+<< /S /D
+ /St 1 >>
+endobj
+xref
+0 18
+0000000000 65535 f
+0000000113 00000 n
+0000000233 00000 n
+0000000398 00000 n
+0000000585 00000 n
+0000000817 00000 n
+0000000976 00000 n
+0000001275 00000 n
+0000001431 00000 n
+0000001712 00000 n
+0000001836 00000 n
+0000002055 00000 n
+0000002233 00000 n
+0000002414 00000 n
+0000002569 00000 n
+0000002676 00000 n
+0000007613 00000 n
+0000007706 00000 n
+trailer
+<< /ID 
+ % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
+ [(R\312\346\262\)|\213\272e\237\334\202\034\245EA) (R\312\346\262\)|\213\272e\237\334\202\034\245EA)] 
+
+ /Info 8 0 R
+ /Root 7 0 R
+ /Size 18 >>
+startxref
+7753
+%%EOF

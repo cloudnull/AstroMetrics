@@ -1,0 +1,13 @@
+AstroMetrics, CLI Tool for commanding a Cloud
+#############################################
+:date: 2013-08-14 16:22
+:tags: openstack, rackspace, aws, api, cli
+:category: \*nix
+
+One tool to rule them all
+=========================
+
+General Overview
+----------------
+
+AstroMetrics is a CLI tool that can help you when interacting with multiple Cloud Environments. This tool has been tested with Openstack environments as well as Rackspace Public Cloud and AWS. This is a VERY early stage tool and overall functionality is limited, however with a bit of time the tool should be able to provide for most, if not all of the functionality you seek from your cloud provider.
