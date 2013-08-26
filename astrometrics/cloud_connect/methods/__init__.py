@@ -26,4 +26,6 @@ LISTMTD = {'availability_zones': 'ex_list_availability_zones',
            'volume': 'list_volumes',
            'volume_snapshots': 'list_volume_snapshots'}
 
-NODEMTD = {'create_node': 'create_node'}
+NODEMTD = {'create': 'create_node',
+           'reboot': 'reboot_node',
+           'destroy': 'destroy_node'}

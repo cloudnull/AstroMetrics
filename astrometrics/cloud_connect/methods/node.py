@@ -35,6 +35,17 @@ class node(object):
         function = getattr(self, action)
         function()
 
+    def info_lookup(self, action, arg):
+        """Look up Cloud Information."""
+
+        find = lookup.show(conn=self.conn, args=self.args)
+        data = find.magic(action=action, arg=arg)
+        if len(data) > 1:
+            raise ions.SystemError('More than a single return was found when'
+                                   ' performing %s lookup.' % action)
+        else:
+            return data[0]
+
     def networks(self, specs):
         networks = self.args.get('cloud_networks')
         specs['networks'] = networks.split(',')
@@ -112,19 +123,32 @@ class node(object):
 
         return deployment_type(actions=dep_actions)
 
+    def reboot_node(self):
+        """Reboot a Cloud Instances."""
+
+        node = self.info_lookup(action='list_nodes',
+                                arg=self.args.get('id'))
+        self.conn.reboot_node(node=node)
+
+    def destroy_node(self):
+        """Destroy a Cloud Instances."""
+
+        node = self.info_lookup(action='list_nodes',
+                                arg=self.args.get('id'))
+        self.conn.destroy_node(node=node)
+
     def create_node(self):
         """Build an instance from values in our DB."""
 
         node_name = self.args.get('name', utils.rand_string().lower())
-        find = lookup.show(conn=self.conn, args=self.args)
-        image_id = find.magic(action='list_images', arg=self.args.get('image'))
-        size_id = find.magic(action='list_sizes', arg=self.args.get('size'))
-
-        print image_id
+        image_id = self.info_lookup(action='list_images',
+                                    arg=self.args.get('image'))
+        size_id = self.info_lookup(action='list_sizes',
+                                   arg=self.args.get('size'))
 
         specs = {'name': node_name,
-                 'image': image_id[0],
-                 'size': size_id[0],
+                 'image': image_id,
+                 'size': size_id,
                  'max_tries': 15,
                  'timeout': 1200}
 
