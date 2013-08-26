@@ -19,7 +19,8 @@ REQUIRES = ['libcloud', 'prettytable']
 
 
 if sys.version_info < (2, 6, 0):
-    sys.stderr.write("AstroMetrics Presently requires Python 2.6.0 or greater \n")
+    sys.stderr.write("AstroMetrics Presently requires Python"
+                     " 2.6.0 or greater \n")
     sys.exit('\nUpgrade python because you version of it is VERY deprecated\n')
 elif sys.version_info < (2, 7, 0):
     REQUIRES.append('argparse')

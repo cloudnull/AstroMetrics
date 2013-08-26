@@ -9,9 +9,9 @@
 # =============================================================================
 import astrometrics as ions
 from astrometrics.cloud_connect.methods import NODEMTD
+import astrometrics.cloud_connect.methods.show as lookup
 import astrometrics.utils as utils
 from astrometrics.worker import LOG
-import astrometrics.cloud_connect.methods.show as lookup
 
 
 class node(object):

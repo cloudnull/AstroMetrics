@@ -8,9 +8,9 @@
 # http://www.gnu.org/licenses/gpl.html
 # =============================================================================
 import astrometrics as ions
+from astrometrics.cloud_connect.methods import LISTMTD
 import astrometrics.utils as utils
 from astrometrics.worker import LOG
-from astrometrics.cloud_connect.methods import LISTMTD
 
 
 class show(object):
