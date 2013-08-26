@@ -15,7 +15,7 @@ import sys
 from astrometrics import info
 
 
-REQUIRES = ['libcloud', 'prettytable']
+REQUIRES = ['apache-libcloud', 'prettytable']
 
 
 if sys.version_info < (2, 6, 0):
@@ -39,6 +39,8 @@ setuptools.setup(
     packages=['astrometrics',
               'astrometrics.arguments',
               'astrometrics.cloud_connect',
+              'astrometrics.cloud_connect.dist',
+              'astrometrics.cloud_connect.methods',
               'astrometrics.logger'],
     url=info.__url__,
     install_requires=REQUIRES,
