@@ -7,25 +7,145 @@
 # details (see GNU General Public License).
 # http://www.gnu.org/licenses/gpl.html
 # =============================================================================
-LISTMTD = {'availability_zones': 'ex_list_availability_zones',
-           'availability_zone': 'ex_list_availability_zones',
-           'images': 'list_images',
-           'image': 'list_images',
-           'key_pairs': 'ex_list_keypairs',
-           'key_pair': 'ex_list_keypairs',
-           'locations': 'list_locations',
-           'location': 'list_locations',
-           'networks': 'ex_list_networks',
-           'instances': 'list_nodes',
-           'instance': 'list_nodes',
-           'security_groups': 'ex_list_security_groups',
-           'security_group': 'ex_list_security_groups',
-           'sizes': 'list_sizes',
-           'size': 'list_sizes',
-           'volumes': 'list_volumes',
-           'volume': 'list_volumes',
-           'volume_snapshots': 'list_volume_snapshots'}
 
-NODEMTD = {'create': 'create_node',
-           'reboot': 'reboot_node',
-           'destroy': 'destroy_node'}
+"""All commands are represented as the following hashes.
+
+:param LISTMTD: List methods and options.
+:param SHOWMTD: Show methods and options
+:param INSTANCEMTD: Instance Methods and options
+"""
+
+LISTMTD = {
+    'availability-zones': {
+        'cmd': 'ex_list_availability_zones',
+        'opt': None
+    },
+    'images': {
+        'cmd': 'list_images',
+        'opt': None
+    },
+    'key-pairs': {
+        'cmd': 'ex_list_keypairs',
+        'pop_keys': ['public_key'],
+        'opt': None
+    },
+    'locations': {
+        'cmd': 'list_locations',
+        'opt': None
+    },
+    'networks': {
+        'cmd': 'ex_list_networks',
+        'opt': None
+    },
+    'providers': {
+        'cmd': 'list_providers',
+        'opt': None
+    },
+    'instances': {
+        'cmd': 'list_nodes',
+        'opt': None
+    },
+    'security-groups': {
+        'cmd': 'ex_list_security_groups',
+        'opt': None
+    },
+    'sizes': {
+        'cmd': 'list_sizes',
+        'opt': None
+    },
+    'volumes': {
+        'cmd': 'list_volumes',
+        'opt': None
+    },
+    'volume-snapshots': {
+        'cmd': 'list_volume_snapshots',
+        'opt': {
+            '--vol': {
+                'required': True,
+                'help': 'List snapshots by Volume ID',
+                'default': None
+            }
+        }
+    }
+}
+
+SHOWMTD = {
+    'availability-zone': {
+        'cmd': 'ex_list_availability_zones',
+        'opt': None
+    },
+    'image': {
+        'cmd': 'list_images',
+        'opt': None
+    },
+    'location': {
+        'cmd': 'list_locations',
+        'opt': {
+            '--id': {
+                'required': True,
+                'help': 'Location ID',
+                'default': None
+            }
+        }
+    },
+    'instance': {
+        'cmd': 'list_nodes',
+        'opt': {
+            '--id': {
+                'required': True,
+                'help': 'Instance ID',
+                'default': None
+            }
+        }
+    },
+    'security-group': {
+        'cmd': 'ex_list_security_groups',
+        'opt': {
+            '--id': {
+                'required': False,
+                'help': 'Security group name',
+                'default': None
+            },
+            '--name': {
+                'required': False,
+                'help': 'Security group id',
+                'default': None
+            }
+        }
+    },
+    'size': {
+        'cmd': 'list_sizes',
+        'opt': {
+            '--id': {
+                'required': False,
+                'help': 'Show Size information',
+                'default': None
+            }
+        }
+    },
+    'volume': {
+        'cmd': 'list_volumes',
+        'opt': {
+            '--id': {
+                'required': False,
+                'help': 'Show volume information',
+                'default': None
+            }
+        }
+    }
+}
+
+INSTANCEMTD = {
+    'create': {
+        'cmd': 'create_node',
+        'opt': None
+    },
+    'reboot': {
+        'cmd': 'reboot_node',
+        'opt': None
+    },
+    'destroy': {
+        'cmd': 'destroy_node',
+        'opt': None
+    }
+}

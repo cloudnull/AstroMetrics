@@ -7,6 +7,13 @@
 # details (see GNU General Public License).
 # http://www.gnu.org/licenses/gpl.html
 # =============================================================================
+import pkgutil
+
+from astrometrics.cloud_connect import methods as cks
+import astrometrics.base_utils as base_utils
+import astrometrics.gen_utils as gen_utils
+
+
 LOG = None
 QUEUE = None
 DEQUE = None
@@ -18,12 +25,10 @@ def load_constants(log_method):
     :param log_method: Set method for logging
     """
 
-    import astrometrics.utils as utils
-
     global LOG, QUEUE, DEQUE
     LOG = log_method
-    QUEUE = utils.basic_queue()
-    DEQUE = utils.basic_deque()
+    QUEUE = base_utils.basic_queue()
+    DEQUE = base_utils.basic_deque()
 
 
 def start_work(set_args):
@@ -32,48 +37,31 @@ def start_work(set_args):
     :param set_args: Arguments that have been parsed for in application use.
     """
 
-    import pkgutil
-
-    from astrometrics.cloud_connect import methods as cks
-    import astrometrics.utils as utils
-
     def get_method(name):
         """Import what is required to run the System."""
 
         to_import = '%s.%s' % (cks.__name__, name)
         return __import__(to_import, fromlist="None")
 
-    def get_actions(module):
-        """Get all available actions from an imported method."""
-
-        classes = [c for c in module.__dict__.values() if isinstance(c, type)]
-        return [c for c in classes if issubclass(c, tuple(classes))]
-
-    def run_action(actions):
-        """Run the action."""
-
-        for action in actions:
-            if set_args.get(action.__name__) is not None:
-                action(conn=conn, args=set_args).start()
-                break
-
-    def get_options(connection):
-        """Show all Driver Options for a Provider."""
-
-        testing = [(('command', method), ('documentation', method.__class__))
-                   for method in dir(connection) if not method.startswith('_')]
-        utils.print_horiz_table(data=testing)
+    #def get_options(connection):
+    #    """Show all Driver Options for a Provider."""
+    #
+    #    testing = [(('command', method), ('documentation', method.__class__))
+    #               for method in dir(connection) if not method.startswith('_')]
+    #    gen_utils.print_horiz_table(data=testing)
 
     # Set an Open Connection
-    conn = utils.ret_conn(args=set_args)
+    conn = base_utils.ret_conn(args=set_args)
 
-    # Testing Code
-    if set_args.get('show_opts'):
-        get_options(connection=conn)
+    action = set_args.get('method')
+    action = action.replace('-', '_')
+
+    for mod, name, package in pkgutil.iter_modules(cks.__path__):
+        action_arg = action.split('_')
+        if name.startswith(action_arg[0]):
+            imported_module = get_method(name=name)
+            run_action = imported_module.Actions(conn=conn, args=set_args)
+            run_action.start()
+            break
     else:
-        for mod, name, package in pkgutil.iter_modules(cks.__path__):
-            if set_args.get(name) is not None:
-                method = get_method(name=name)
-                actions = get_actions(module=method)
-                run_action(actions=actions)
-                break
+        raise SystemExit('No Method Found to peroform action "%s"' % action)

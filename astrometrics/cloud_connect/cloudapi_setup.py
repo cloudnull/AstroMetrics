@@ -7,12 +7,16 @@
 # details (see GNU General Public License).
 # http://www.gnu.org/licenses/gpl.html
 # =============================================================================
+import logging
+
 import libcloud.compute.providers as providers
 from libcloud import security
 
 import astrometrics as ions
-import astrometrics.utils as utils
-from astrometrics.worker import LOG
+import astrometrics.gen_utils as utils
+
+
+LOG = logging.getLogger('cloud-setup')
 
 
 def cloud_keys(args):
@@ -21,11 +25,11 @@ def cloud_keys(args):
     :param args:
     """
 
-    if args.get('cloud_password'):
-        user_key = args.get('cloud_password')
+    if args.get('password'):
+        user_key = args.get('password')
         key_type = 'password'
-    elif args.get('cloud_apikey'):
-        user_key = args.get('cloud_apikey')
+    elif args.get('apikey'):
+        user_key = args.get('apikey')
         key_type = 'api_key'
     else:
         raise ions.SystemError('No Password/Key provided in Command')
@@ -44,25 +48,25 @@ def api_conn(args):
     security.CA_CERTS_PATH.append('dist/cacert.pem')
 
     user_key, key_type = cloud_keys(args)
-    _provider = args.get('cloud_provider', 'dummy')
+    _provider = args.get('provider', 'dummy')
 
     if _provider in providers.DRIVERS:
-        driver = providers.get_driver(args.get('cloud_provider'))
+        driver = providers.get_driver(args.get('provider'))
     else:
         raise ions.SystemError('No Provider Type Found.')
 
     try:
         if _provider.upper() in ['RACKSPACE', 'OPENSTACK']:
-            region = args.get('cloud_region', 'RegionOne').lower()
+            region = args.get('region', 'RegionOne').lower()
 
             if key_type is 'api_key':
                 auth_type = '2.0_apikey'
             else:
                 auth_type = '2.0_password'
 
-            specs = {'ex_force_auth_url': args.get('cloud_authurl'),
+            specs = {'ex_force_auth_url': args.get('authurl'),
                      'ex_force_auth_version': auth_type,
-                     'ex_tenant_name': args.get('cloud_tenant')}
+                     'ex_tenant_name': args.get('tenant')}
 
             if _provider.upper() == 'RACKSPACE':
                 if region == 'regionone':
@@ -72,8 +76,8 @@ def api_conn(args):
                                   'datacenter': region,
                                   'region': region})
         else:
-            specs = {'ex_force_auth_url': args.get('cloud_authurl'),
-                     'ex_force_auth_version': args.get('cloud_version')}
+            specs = {'ex_force_auth_url': args.get('authurl'),
+                     'ex_force_auth_version': args.get('api_version')}
 
     except Exception as exp:
         LOG.info(exp)
@@ -81,7 +85,8 @@ def api_conn(args):
                                'ERROR: %s' % exp)
     else:
         specs = utils.parse_dictionary(dictionary=specs)
+        LOG.info(specs)
         LOG.debug(specs)
-        return driver(args.get('cloud_user'),
-                      user_key,
-                      **specs)
+        return driver(
+            args.get('username'), user_key, **specs
+        )
